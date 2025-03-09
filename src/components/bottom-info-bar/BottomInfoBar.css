@@ -2,12 +2,39 @@
   width: 100%;
   position: fixed;
   bottom: 0;
-  padding: 10px;
+  display: flex;
+  overflow-y: hidden;
+  overflow-x: auto;
+  white-space: nowrap;
+  /* Hide scrollbar for Firefox */
+  scrollbar-width: none;
+}
+
+/* Hide scrollbar for Chrome, Safari */
+.bottom-status-bar::-webkit-scrollbar {
+  display: none;
+}
+
+.current-song-info-box {
+  width: 140px !important;
+  /* background-color: transparent; Change if needed */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  transition-duration: 0.5s;
+  position: relative;
+}
+
+.current-song-info-box:hover {
+  transform: scale(1.01);
+  transition-duration: 0.5s;
 }
 
 .song-img {
-  width: 120px;
-  height: 120px;
+  max-width: none;
+  width: 120px !important;
+  height: 120px !important;
   border-radius: 5px;
   margin-right: 10px;
   object-fit: cover;
@@ -15,12 +42,38 @@
 
 .show-opacity-onhover {
   color: aliceblue;
-  opacity: 0.2;
+  opacity: 0.8;
   z-index: 10;
+  position: absolute;
   transition-duration: 0.3s;
 }
 
-.song-img:hover .show-opacity-onhover {
+.play-button {
+  margin-top: 100px !important; /* Adjust this */
+  margin-left: 50px !important; /* Align better */
+  opacity: 0;
+  transition-duration: 0.3s !important;
+  cursor: pointer;
+}
+
+.current-song-info-box:hover .play-button {
   opacity: 1 !important;
+  margin-top: 65px !important;
+  transition-duration: 0.3s !important;
+}
+
+/* Ensure play button is always visible for the playing song */
+.always-visible {
+  opacity: 1 !important;
+  margin-top: 65px !important;
+  transition-duration: 0.3s !important;
+}
+
+.play-icon {
+  transition-duration: 0.3s !important;
+}
+
+.play-button:hover .play-icon {
+  transform: scale(1.1);
   transition-duration: 0.3s !important;
 }

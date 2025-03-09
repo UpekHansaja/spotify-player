@@ -3,11 +3,10 @@
 .main-bg{
     width: 100%;
     height: 100vh;
-    background-image: url("https://static.vecteezy.com/system/resources/previews/037/044/052/non_2x/ai-generated-studio-shot-of-black-headphones-over-music-note-explosion-background-with-empty-space-for-text-photo.jpg");
+    background-image: url("src/assets/momo-img.jpeg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    overflow: hidden;
     background-blend-mode: multiply;
 }
 
@@ -16,7 +15,6 @@
     input[type='range'] {
       overflow: hidden;
       -webkit-appearance: none;
-      /* background-color: #9a905d; */
     }
     
     input[type='range']::-webkit-slider-runnable-track {

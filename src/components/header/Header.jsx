@@ -1,24 +1,33 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Moon, Sun, SunMedium, SunMoon, TentTree } from 'lucide-react'
 
 const Header = () => {
 
-    const date = new Date();
-    const hours = date.getHours();
-    let timeOfDay = ''
+    const [timeOfDay, setTimeOfDay] = useState('-');
 
-    if (hours < 12) {
-        timeOfDay = 'morning'
-    }
-    else if (hours >= 12 && hours < 17) {
-        timeOfDay = 'afternoon'
-    }
-    else if (hours >= 17 && hours < 21) {
-        timeOfDay = 'evening'
-    }
-    else {
-        timeOfDay = 'night'
-    }
+    const loadTimeNGreating = () => {
+
+        const date = new Date();
+        const hours = date.getHours();
+
+        if (hours < 12) {
+            setTimeOfDay('morning')
+        }
+        else if (hours >= 12 && hours < 17) {
+            setTimeOfDay('afternoon')
+        }
+        else if (hours >= 17 && hours < 21) {
+            setTimeOfDay('evening')
+        }
+        else {
+            setTimeOfDay('night')
+        }
+
+    };
+
+    useEffect(() => {
+        loadTimeNGreating();
+    }, []);
 
     return (
         <>

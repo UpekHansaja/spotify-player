@@ -20,7 +20,7 @@ const Controls = () => {
                 </div>
                 <div className="flex items-center justify-center flex-col mt-12">
                     <div className="text-2xl font-bold backdrop-blur-md">Song Title</div>
-                    <div className="text-sm font-semibold backdrop-blur-md">Artist Name</div>
+                    <div className="text-sm font-semibold backdrop-blur-md mt-2">Artist Name</div>
 
                     <div className="flex items-center justify-center mt-4 gap-2.5">
                         <span>00:00</span>
